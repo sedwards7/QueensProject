@@ -40,21 +40,21 @@ public class Queen
         int x = this.row;
         int y = this.column;
 
-        if (x == con.getRow() || y == con.getRow() || checkDiagConflict(con))
+        if (x == con.getRow() || y == con.getColumn() || checkDiagConflict(con))
             return true;
         else
             return false;
 
     }
 
-    public boolean checkDiagConflict(Queen con){
+    public boolean checkDiagConflict(Queen check){
         int x = this.row;
         int y = this.column;
         boolean answer = false;
 
         // check left diagonal
         while (x <= n && y <= n && x >= 1 && y >= 1){
-            if (con.getRow() == x && con.getColumn() == y)
+            if (check.getRow() == x && check.getColumn() == y)
                 answer = true;
             //check diagonal space to the left
             x--;
@@ -64,16 +64,13 @@ public class Queen
         y = this.column;
         //check right diagonal
         while (x <= n && y <= n && x >= 1 && y >= 1){
-            if (con.getRow() == this.getRow() && con.getColumn() == this.getColumn())
+            if (check.getRow() == x && check.getColumn() == y)
                 answer = true;
             //check diagonal space to the right
-            x++;
-            y--;
+            x--;
+            y++;
         }
-
         return answer;
-
-
     }
 
     @Override
