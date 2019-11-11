@@ -1,6 +1,7 @@
 // File: LinkedStack.java
 // Complete documentation is available from the LinkedStack link in:
 //   http://www.cs.colorado.edu/~main/docs/
+//Edited by: Sean Edwards
 
 
 import java.util.EmptyStackException;
@@ -141,6 +142,12 @@ public class LinkedStack<E> implements Cloneable
         return answer;
     }
 
+    /**
+     * --Method added by Sean Edwards--
+     * Peeks at the item in the stack at a desired index
+     * @param index -location of the item
+     * @return -the item at the index
+     */
     public E itemAt(int index){
         LinkedStack<E> temp = new LinkedStack<>();
         E answer;
